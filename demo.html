@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App - Demo</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="app-title">
+                <i class="fas fa-cloud-sun"></i>
+                Weather App - Demo
+            </h1>
+        </header>
+
+        <!-- Setup Instructions -->
+        <section class="search-section">
+            <div class="search-container">
+                <div style="background: rgba(255, 255, 255, 0.9); border-radius: 20px; padding: 30px; margin-bottom: 20px; text-align: center;">
+                    <h2 style="color: #2d3436; margin-bottom: 15px;">🚀 Getting Started</h2>
+                    <p style="color: #636e72; margin-bottom: 20px;">
+                        To use this weather app, you need to get a free API key from OpenWeatherMap:
+                    </p>
+                    <ol style="text-align: left; color: #636e72; max-width: 400px; margin: 0 auto;">
+                        <li style="margin-bottom: 10px;">Visit <a href="https://openweathermap.org/api" target="_blank" style="color: #74b9ff;">OpenWeatherMap API</a></li>
+                        <li style="margin-bottom: 10px;">Sign up for a free account</li>
+                        <li style="margin-bottom: 10px;">Get your API key</li>
+                        <li style="margin-bottom: 10px;">Replace 'YOUR_API_KEY_HERE' in script.js with your key</li>
+                        <li>Open index.html in your browser</li>
+                    </ol>
+                </div>
+                
+                <div class="search-input-wrapper">
+                    <input 
+                        type="text" 
+                        id="cityInput" 
+                        placeholder="Enter city name (requires API key)..." 
+                        class="search-input"
+                        autocomplete="off"
+                        disabled
+                    >
+                    <button id="searchBtn" class="search-btn" disabled>
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <div class="error-message" id="errorMessage" style="color: #fdcb6e; font-weight: 600;">
+                    ⚠️ Please configure your API key first
+                </div>
+            </div>
+        </section>
+
+        <!-- Demo Weather Card -->
+        <section class="current-weather">
+            <div class="weather-card">
+                <div class="weather-header">
+                    <div class="location-info">
+                        <h2 class="city-name">Demo City</h2>
+                        <p class="date">Monday, January 15, 2024</p>
+                    </div>
+                    <div class="weather-icon">
+                        <i class="fas fa-sun"></i>
+                    </div>
+                </div>
+                
+                <div class="weather-main">
+                    <div class="temperature">
+                        <span class="temp-value">22</span>
+                        <span class="temp-unit">°C</span>
+                    </div>
+                    <div class="weather-description">clear sky</div>
+                </div>
+
+                <div class="weather-details">
+                    <div class="detail-item">
+                        <i class="fas fa-eye"></i>
+                        <span class="detail-label">Visibility</span>
+                        <span class="detail-value">10 km</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-tint"></i>
+                        <span class="detail-label">Humidity</span>
+                        <span class="detail-value">65%</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-wind"></i>
+                        <span class="detail-label">Wind Speed</span>
+                        <span class="detail-value">3 m/s</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-thermometer-half"></i>
+                        <span class="detail-label">Feels Like</span>
+                        <span class="detail-value">24°C</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Demo Forecast -->
+        <section class="forecast-section">
+            <h3 class="forecast-title">5-Day Forecast (Demo)</h3>
+            <div class="forecast-container">
+                <div class="forecast-card">
+                    <div class="forecast-date">Tue, Jan 16</div>
+                    <div class="forecast-icon"><i class="fas fa-cloud-sun"></i></div>
+                    <div class="forecast-temp">
+                        <span class="forecast-high">20°C</span>
+                    </div>
+                    <div class="forecast-description">partly cloudy</div>
+                </div>
+                <div class="forecast-card">
+                    <div class="forecast-date">Wed, Jan 17</div>
+                    <div class="forecast-icon"><i class="fas fa-cloud-rain"></i></div>
+                    <div class="forecast-temp">
+                        <span class="forecast-high">18°C</span>
+                    </div>
+                    <div class="forecast-description">light rain</div>
+                </div>
+                <div class="forecast-card">
+                    <div class="forecast-date">Thu, Jan 18</div>
+                    <div class="forecast-icon"><i class="fas fa-cloud"></i></div>
+                    <div class="forecast-temp">
+                        <span class="forecast-high">19°C</span>
+                    </div>
+                    <div class="forecast-description">cloudy</div>
+                </div>
+                <div class="forecast-card">
+                    <div class="forecast-date">Fri, Jan 19</div>
+                    <div class="forecast-icon"><i class="fas fa-sun"></i></div>
+                    <div class="forecast-temp">
+                        <span class="forecast-high">23°C</span>
+                    </div>
+                    <div class="forecast-description">clear sky</div>
+                </div>
+                <div class="forecast-card">
+                    <div class="forecast-date">Sat, Jan 20</div>
+                    <div class="forecast-icon"><i class="fas fa-cloud-sun"></i></div>
+                    <div class="forecast-temp">
+                        <span class="forecast-high">21°C</span>
+                    </div>
+                    <div class="forecast-description">few clouds</div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Demo script - shows the interface without API calls
+        document.addEventListener('DOMContentLoaded', () => {
+            const cityInput = document.getElementById('cityInput');
+            const searchBtn = document.getElementById('searchBtn');
+            const errorMessage = document.getElementById('errorMessage');
+            
+            // Show demo message
+            setTimeout(() => {
+                errorMessage.innerHTML = '🎨 This is a demo interface. Configure your API key to get real weather data!';
+                errorMessage.style.color = '#74b9ff';
+            }, 1000);
+            
+            // Disable search functionality
+            searchBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                errorMessage.innerHTML = '⚠️ Please configure your API key in script.js first';
+                errorMessage.style.color = '#e17055';
+            });
+            
+            cityInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    errorMessage.innerHTML = '⚠️ Please configure your API key in script.js first';
+                    errorMessage.style.color = '#e17055';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
